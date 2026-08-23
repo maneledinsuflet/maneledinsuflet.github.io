@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manele din suflet | Site Oficial</title>
+
+  <meta name="description" content="Site oficial Manele din suflet. Muzică din inimă, pentru suflet. Ascultă cele mai noi melodii pe YouTube, Spotify și platformele digitale.">
+
+  <meta name="theme-color" content="#090909">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #4a2500 0%, #17100a 28%, #080808 58%);
+      color: white;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* MENIU */
+
+    nav {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 190, 70, 0.16);
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffd27a;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+      font-size: 0.95rem;
+    }
+
+    .menu a {
+      color: #e8e8e8;
+      transition: 0.25s;
+    }
+
+    .menu a:hover {
+      color: #ffd27a;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "♪";
+      position: absolute;
+      font-size: 34rem;
+      color: rgba(255, 190, 60, 0.025);
+      right: -70px;
+      top: -140px;
+      transform: rotate(-10deg);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini {
+      color: #f4b942;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        135deg,
+        #fff1bb,
+        #ffbd45,
+        #fff0b0
+      );
+
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.55rem);
+      color: #d7d7d7;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 38px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: 0.25s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffb62e, #e78b00);
+      color: #111;
+      box-shadow: 0 10px 35px rgba(255, 169, 33, 0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIUNI */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+    }
+
+    .section-description {
+      text-align: center;
+      color: #ababab;
+      max-width: 650px;
+      margin: 0 auto 48px;
+    }
+
+    /* PLATFORME */
+
+    .platforms {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .platform {
+      padding: 28px 15px;
+      text-align: center;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .platform:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 184, 55, 0.55);
+      background: rgba(255, 183, 50, 0.08);
+    }
+
+    .platform-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .platform strong {
+      display: block;
+      color: #ffd27a;
+    }
+
+    .platform span {
+      font-size: 0.82rem;
+      color: #999;
+    }
+
+    /* MELODII */
+
+    .songs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1100px;
+      margin: auto;
+      gap: 24px;
+    }
+
+    .song {
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.065),
+        rgba(255,255,255,0.025)
+      );
+
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .song:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 185, 55, 0.4);
+    }
+
+    .song-cover {
+      height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5rem;
+      background:
+        radial-gradient(circle at top left, #9d5800, #24170d 55%, #080808);
+    }
+
+    .song-info {
+      padding: 22px;
+    }
+
+    .song-info h3 {
+      color: #ffd27a;
+      margin-bottom: 5px;
+    }
+
+    .song-info p {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* DESPRE */
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px;
+      text-align: center;
+      border-radius: 30px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,180,50,0.11),
+          rgba(255,255,255,0.025)
+        );
+      border: 1px solid rgba(255, 190, 70, 0.15);
+    }
+
+    .about h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #ffd27a;
+    }
+
+    .about p {
+      color: #c8c8c8;
+      font-size: 1.06rem;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      margin-bottom: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: #777;
+      font-size: 0.88rem;
+    }
+
+    footer strong {
+      color: #c99a47;
+    }
+
+    /* TELEFON */
+
+    @media (max-width: 850px) {
+
+      nav {
+        padding: 16px 5%;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .platforms {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .songs {
+        grid-template-columns: 1fr;
+      }
+
+      .song-cover {
+        height: 230px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .about {
+        padding: 35px 22px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="brand">
+      Manele din suflet
+    </div>
+
+    <div class="menu">
+      <a href="#acasa">Acasă</a>
+      <a href="#platforme">Ascultă</a>
+      <a href="#melodii">Melodii</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+
+  <header class="hero" id="acasa">
+
+    <div class="hero-content">
+
+      <div class="mini">
+        Site Oficial
+      </div>
+
+      <h1>
+        MANELE<br>
+        DIN SUFLET
+      </h1>
+
+      <p class="subtitle">
+        Muzică din inimă, pentru suflet.
+        Povești, emoții și melodii create pentru oamenii care simt muzica.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-primary" href="#platforme">
+          ▶ Ascultă muzica
+        </a>
+
+        <a class="btn btn-secondary" href="#melodii">
+          Cele mai noi melodii
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <section id="platforme">
+
+    <h2 class="section-title">
+      Ascultă Manele din suflet
+    </h2>
+
+    <p class="section-description">
+      Găsește muzica noastră pe platformele preferate.
+    </p>
+
+    <div class="platforms">
+
+      <a class="platform" href="#" target="_blank">
+        <div class="platform-icon">▶</div>
+        <strong>YouTube</strong>
+        <span>Vezi canalul oficial</span>
+      </a>
+
+      <a class="platform" href="#" target="_blank">
+        <div class="platform-icon">♫</div>
+        <strong>Spotify</strong>
+        <span>Ascultă pe Spotify</span>
+      </a>
+
+      <a class="platform" href="#" target="_blank">
+        <div class="platform-icon">♪</div>
+        <strong>TikTok</strong>
+        <span>Urmărește-ne pe TikTok</span>
+      </a>
+
+      <a class="platform" href="#" target="_blank">
+        <div class="platform-icon">◎</div>
+        <strong>Instagram</strong>
+        <span>Urmărește-ne pe Instagram</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section id="melodii">
+
+    <h2 class="section-title">
+      Cele mai noi melodii
+    </h2>
+
+    <p class="section-description">
+      Aici vor apărea cele mai noi lansări Manele din suflet.
+    </p>
+
+    <div class="songs">
+
+      <div class="song">
+
+        <div class="song-cover">
+          ♪
+        </div>
+
+        <div class="song-info">
+          <h3>Melodie nouă</h3>
+          <p>Manele din suflet</p>
+        </div>
+
+      </div>
+
+
+      <div class="song">
+
+        <div class="song-cover">
+          ♫
+        </div>
+
+        <div class="song-info">
+          <h3>Melodie nouă</h3>
+          <p>Manele din suflet</p>
+        </div>
+
+      </div>
+
+
+      <div class="song">
+
+        <div class="song-cover">
+          ♥
+        </div>
+
+        <div class="song-info">
+          <h3>Melodie nouă</h3>
+          <p>Manele din suflet</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="despre">
+
+    <div class="about">
+
+      <h2>
+        Despre Manele din suflet
+      </h2>
+
+      <p>
+        Manele din suflet este un proiect muzical născut din pasiunea
+        pentru muzică și pentru poveștile adevărate ale oamenilor.
+
+        <br><br>
+
+        Fiecare melodie poartă o emoție, un mesaj și o parte din viață.
+        Muzica nu este doar sunet. Muzica este amintire, iubire,
+        dor și suflet.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2>
+        Urmărește Manele din suflet
+      </h2>
+
+      <p>
+        Melodii noi, videoclipuri și lansări pe platformele oficiale.
+      </p>
+
+      <a class="btn btn-primary" href="#platforme">
+        Vezi platformele
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    © 2026 <strong>Manele din suflet</strong> · Toate drepturile rezervate.
+
+  </footer>
+
+
+</body>
+</html>
