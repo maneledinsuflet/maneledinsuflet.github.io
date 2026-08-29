@@ -271,6 +271,7 @@
       .hero{min-height:72vh;padding:90px 18px 70px;background-position:center}
       .platforms{grid-template-columns:repeat(2,1fr)}
       .songs{grid-template-columns:1fr}
+      .video-grid{grid-template-columns:1fr}
       section{padding:65px 20px}
       .about{padding:34px 22px}
     }
@@ -278,6 +279,14 @@
     @media(max-width:520px){
       .platforms{grid-template-columns:1fr}
     }
+
+    .video-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .video-card{overflow:hidden;border-radius:22px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);box-shadow:0 12px 35px rgba(0,0,0,.28);transition:.25s}
+    .video-card:hover{transform:translateY(-4px);border-color:rgba(255,187,68,.45)}
+    .video-wrap{position:relative;width:100%;padding-top:56.25%;background:#000}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .youtube-more{text-align:center;margin-top:34px}
+
   </style>
 </head>
 
@@ -380,35 +389,38 @@
   </section>
 
   <section id="melodii">
-    <h2 class="section-title">Cele mai noi melodii</h2>
-    <p class="section-description">
-      Aici vom adăuga treptat cele mai noi lansări Manele din suflet.
-    </p>
-
-    <div class="songs">
-      <div class="song">
-        <div class="song-cover">♪</div>
-        <div class="song-info">
-          <h3>Lansări noi</h3>
-          <p>Ascultă pe Spotify și Apple Music</p>
-        </div>
-      </div>
-
-      <div class="song">
-        <div class="song-cover">▶</div>
-        <div class="song-info">
-          <h3>Videoclipuri</h3>
-          <p>Vezi cele mai noi piese pe YouTube</p>
-        </div>
-      </div>
-
-      <div class="song">
-        <div class="song-cover">♥</div>
-        <div class="song-info">
-          <h3>Manele din suflet</h3>
-          <p>Muzică din inimă, pentru suflet</p>
-        </div>
-      </div>
+    <h2 class="section-title">Cele mai noi videoclipuri</h2>
+    <p class="section-description">Ascultă direct aici cele mai noi piese Manele din suflet.</p>
+    <div class="video-grid">
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/w8AeDuAg66A" title="Manele din suflet - videoclip 1" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/QA_HkPheaNc" title="Manele din suflet - videoclip 2" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/frEurl9Q2TE" title="Manele din suflet - videoclip 3" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/uIgf4kUFXCQ" title="Manele din suflet - videoclip 4" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/_9OxlPwzzAc" title="Manele din suflet - videoclip 5" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/M1vafblXrl8" title="Manele din suflet - videoclip 6" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+    </div>
+    <div class="youtube-more">
+      <a class="btn btn-primary" href="https://youtube.com/@manele-din-suflet?si=WMcZwY20iyJj_R7I" target="_blank" rel="noopener">
+        ▶ Vezi toate videoclipurile pe YouTube
+      </a>
     </div>
   </section>
 
