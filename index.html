@@ -112,17 +112,12 @@
     .menu a:hover{color:#ffd27a}
 
     .hero{
-      min-height:82vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:108px 20px 92px;
+      width:100%;
+      aspect-ratio:1536/740;
+      min-height:0;
       position:relative;
       overflow:hidden;
-      background:
-        linear-gradient(rgba(0,0,0,.34),rgba(0,0,0,.52)),
-        url('banner.jpeg') center/cover no-repeat;
+      background:url('hero-premium.jpeg') center/100% 100% no-repeat;
       border-bottom:1px solid rgba(255,186,48,.32)
     }
 
@@ -332,7 +327,7 @@
       .brand img{width:44px;height:44px}
       .brand span{font-size:1rem}
       .menu{display:none}
-      .hero{min-height:72vh;padding:90px 18px 70px;background-position:center}
+      .hero{min-height:0;padding:0;background-position:center}
       .platforms{grid-template-columns:repeat(2,1fr)}
       .songs{grid-template-columns:1fr}
       .video-grid{grid-template-columns:1fr}
@@ -504,6 +499,50 @@
       .hero-wave{font-size:1.2rem}
     }
 
+
+    .hero .hero-content,
+    .hero .hero-music-left,
+    .hero .hero-music-right,
+    .hero .hero-wave{
+      display:none !important
+    }
+
+    .hero-hotspot{
+      position:absolute;
+      z-index:5;
+      display:block;
+      border-radius:999px;
+      background:transparent;
+      cursor:pointer;
+    }
+
+    .hero-hotspot.spotify{
+      left:29.4%;
+      top:65.4%;
+      width:19.6%;
+      height:10.8%;
+    }
+
+    .hero-hotspot.youtube{
+      left:51.1%;
+      top:65.4%;
+      width:19.6%;
+      height:10.8%;
+    }
+
+    .hero-hotspot:focus-visible{
+      outline:3px solid #ffd12d;
+      outline-offset:3px;
+    }
+
+    @media(max-width:850px){
+      .hero{
+        min-height:0;
+        padding:0;
+        background-position:center;
+      }
+    }
+
   </style>
 </head>
 
@@ -526,6 +565,18 @@
   </nav>
 
   <header class="hero" id="acasa">
+    <a class="hero-hotspot spotify"
+       href="https://open.spotify.com/artist/2BXRF4rd0iW9vtnKxB4cKW?si=eAfatKGETKm8lGHumpPO_Q&utm_source=copy-link"
+       target="_blank" rel="noopener"
+       aria-label="Ascultă pe Spotify"
+       title="Ascultă pe Spotify"></a>
+
+    <a class="hero-hotspot youtube"
+       href="https://youtube.com/@manele-din-suflet?si=WMcZwY20iyJj_R7I"
+       target="_blank" rel="noopener"
+       aria-label="Vezi pe YouTube"
+       title="Vezi pe YouTube"></a>
+
     <div class="hero-music-left" aria-hidden="true">♪</div>
     <div class="hero-music-right" aria-hidden="true">♫</div>
     <div class="hero-wave" aria-hidden="true">▁▂▃▄▅▆▇♫▇▆▅▄▃▂▁</div>
