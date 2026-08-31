@@ -72,12 +72,11 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
-      padding:10px 2.2%;
+      padding:8px 2.2%;
       min-height:86px;
-      background:rgba(1,1,2,.98);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,198,28,.58);
-      box-shadow:0 8px 28px rgba(0,0,0,.32)
+      background:#020203;
+      border-bottom:1px solid rgba(255,196,25,.72);
+      box-shadow:0 8px 30px rgba(0,0,0,.48)
     }
 
     .brand{
@@ -88,20 +87,20 @@
     }
 
     .brand img{
-      width:72px;
-      height:72px;
+      width:74px;
+      height:74px;
       object-fit:cover;
       border-radius:50%;
-      box-shadow:0 0 24px rgba(255,188,0,.38)
+      box-shadow:0 0 24px rgba(255,190,20,.25)
     }
 
     .brand span{
       font-weight:900;
       font-style:italic;
-      color:#ffd426;
-      font-size:1.72rem;
+      color:#ffd321;
+      font-size:1.85rem;
       white-space:nowrap;
-      text-shadow:0 0 18px rgba(255,199,30,.22)
+      text-shadow:0 0 14px rgba(255,205,40,.18)
     }
 
     .menu{
@@ -111,38 +110,20 @@
       font-size:1rem
     }
 
-    .menu a{
-      color:#f1f1f1;
-      transition:.2s;
-      position:relative;
-      padding:10px 0
-    }
-    .menu a:first-child{color:#ffd426}
-    .menu a:first-child::after{
-      content:"";
-      position:absolute;
-      left:10%;
-      right:10%;
-      bottom:1px;
-      height:2px;
-      background:#ffd426;
-      box-shadow:0 0 8px rgba(255,212,38,.55)
-    }
+    .menu a{color:#e8e8e8;transition:.2s}
     .menu a:hover{color:#ffd27a}
 
     .hero{
-      min-height:610px;
+      min-height:630px;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:34px 20px 62px;
+      padding:34px 20px 64px;
       position:relative;
       overflow:hidden;
-      background:
-        linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.28)),
-        url('banner.jpeg') center center/cover no-repeat;
-      border-bottom:1px solid rgba(255,186,48,.34)
+      background:#020305;
+      border-bottom:1px solid rgba(255,190,32,.34)
     }
 
     .hero::before{
@@ -151,7 +132,10 @@
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 50% 100%, rgba(255,192,24,.11), transparent 20%);
+        radial-gradient(ellipse at -3% 56%,rgba(255,0,136,.48) 0%,rgba(255,0,136,.18) 24%,transparent 42%),
+        radial-gradient(ellipse at 103% 56%,rgba(0,125,255,.52) 0%,rgba(0,112,255,.18) 26%,transparent 44%),
+        radial-gradient(ellipse at 20% 100%,rgba(255,0,115,.24),transparent 25%),
+        radial-gradient(ellipse at 80% 100%,rgba(0,130,255,.24),transparent 25%);
     }
 
     .hero::after{
@@ -159,14 +143,21 @@
       position:absolute;
       inset:0;
       pointer-events:none;
-      background:
-        linear-gradient(90deg,rgba(0,0,0,.08),transparent 25%,transparent 75%,rgba(0,0,0,.08)),
-        linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.14))
+      background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05) 65%,rgba(0,0,0,.28));
+    }
+
+    .neon-art{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      width:100%;
+      height:100%;
+      pointer-events:none
     }
 
     .hero-content{
       position:relative;
-      z-index:2;
+      z-index:3;
       max-width:930px;
       width:100%
     }
@@ -176,41 +167,39 @@
       align-items:center;
       justify-content:center;
       gap:18px;
-      color:#ffd426;
+      color:#ffd321;
       text-transform:uppercase;
       letter-spacing:6px;
-      font-size:.86rem;
-      margin-bottom:15px;
-      font-weight:900;
-      text-shadow:0 0 16px rgba(255,193,40,.28)
+      font-size:.88rem;
+      margin-bottom:16px;
+      font-weight:900
     }
     .mini::before,.mini::after{
       content:"";
       width:58px;
       height:2px;
-      background:linear-gradient(90deg,transparent,#ffd426);
-      box-shadow:0 0 8px rgba(255,212,38,.4)
+      background:linear-gradient(90deg,transparent,#ffd321)
     }
-    .mini::after{background:linear-gradient(90deg,#ffd426,transparent)}
+    .mini::after{background:linear-gradient(90deg,#ffd321,transparent)}
 
     h1{
-      font-size:clamp(4rem,8vw,6.7rem);
-      line-height:.93;
-      letter-spacing:1px;
-      margin-bottom:18px;
-      text-shadow:0 8px 30px rgba(0,0,0,.88);
+      font-size:clamp(4.4rem,8.5vw,7.15rem);
+      line-height:.90;
+      letter-spacing:0;
+      margin-bottom:22px;
+      text-shadow:0 9px 34px rgba(0,0,0,.92);
       font-weight:900
     }
 
     .subtitle{
-      font-size:clamp(1.05rem,2.2vw,1.42rem);
-      max-width:700px;
+      font-size:clamp(1.08rem,2.3vw,1.45rem);
+      max-width:760px;
       margin:auto;
       color:#f5f5f5;
-      text-shadow:0 3px 16px rgba(0,0,0,.9)
+      text-shadow:0 3px 18px rgba(0,0,0,.94)
     }
-    .subtitle .accent-yellow{color:#ffd426}
-    .subtitle .accent-pink{color:#ff32b5}
+    .accent-yellow{color:#ffd321}
+    .accent-pink{color:#ff27ad}
 
     .hero-buttons{
       margin-top:30px;
@@ -224,7 +213,8 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:255px;
+      gap:10px;
+      min-width:270px;
       padding:15px 28px;
       border-radius:999px;
       font-weight:800;
@@ -232,15 +222,16 @@
     }
 
     .btn-primary{
-      background:linear-gradient(180deg,#ffd51f,#e4ab00);
-      color:#111;
-      border:1px solid #ffe45e;
-      box-shadow:0 10px 28px rgba(255,194,0,.28)
+      background:linear-gradient(180deg,#ffd92e,#e6ad00);
+      color:#101010;
+      border:1px solid #ffe866;
+      box-shadow:0 10px 30px rgba(255,190,0,.30)
     }
 
     .btn-secondary{
-      border:1px solid #ff2b2b;
-      background:rgba(0,0,0,.50)
+      border:1px solid #ff2525;
+      background:rgba(0,0,0,.58);
+      box-shadow:0 0 20px rgba(255,0,0,.08)
     }
 
     .btn:hover{transform:translateY(-3px)}
@@ -365,15 +356,12 @@
 
     @media(max-width:850px){
       nav{padding:10px 4%}
-      .brand img{width:44px;height:44px}
-      .brand span{font-size:1rem}
-      .menu{display:none}
-      .hero{min-height:560px;padding:42px 18px 58px;background-position:center}
-      .platforms{grid-template-columns:repeat(2,1fr)}
-      .songs{grid-template-columns:1fr}
-      .video-grid{grid-template-columns:1fr}
-      section{padding:65px 20px}
-      .about{padding:34px 22px}
+      .brand img{
+      width:74px;
+      height:74px;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow:0 0 24px rgba(255,190,20,.25)
     }
 
     @media(max-width:520px){
@@ -497,16 +485,29 @@
     .hero-wave{
       position:absolute;
       left:50%;
-      bottom:3%;
+      bottom:3.2%;
       transform:translateX(-50%);
-      z-index:1;
-      pointer-events:none;
-      user-select:none;
-      color:#ffd426;
-      font-size:clamp(1.5rem,2.4vw,2.2rem);
+      z-index:2;
+      color:#ffd321;
+      font-size:clamp(1.55rem,2.5vw,2.35rem);
       letter-spacing:4px;
-      opacity:.98;
-      text-shadow:0 0 10px #ffd426,0 0 24px rgba(255,209,45,.48)
+      text-shadow:0 0 12px #ffd321,0 0 28px rgba(255,205,20,.62);
+      pointer-events:none;
+      user-select:none
+    }
+
+    .platform-icon svg{width:54px;height:54px;display:block;margin:0 auto 10px}
+    .platform strong{font-size:1.05rem;color:#fff}
+    .platform{border-color:rgba(255,188,34,.24)}
+    .platform:hover{border-color:rgba(255,188,34,.65)}
+
+    @media(max-width:850px){
+      nav{padding:8px 4%}
+      .brand img{width:48px;height:48px}
+      .brand span{font-size:1.15rem}
+      .menu{display:none}
+      .hero{min-height:570px;padding:38px 16px 58px}
+      .neon-art{transform:scale(1.15)}
     }
 
   </style>
@@ -531,6 +532,39 @@
   </nav>
 
   <header class="hero" id="acasa">
+    <svg class="neon-art" viewBox="0 0 1600 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="pinkGlow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="blueGlow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="floorGlow" x1="0" x2="1"><stop offset="0" stop-color="#ff0099"/><stop offset=".5" stop-color="#ffc814"/><stop offset="1" stop-color="#008cff"/></linearGradient>
+      </defs>
+      <g fill="none" stroke-linecap="round" filter="url(#pinkGlow)">
+        <path d="M-100 455 C120 210 245 660 470 390 C335 515 190 250 10 365 C155 305 270 610 525 425" stroke="#ff20ad" stroke-width="3.5"/>
+        <path d="M-90 520 C120 325 250 670 500 435 C345 560 205 320 10 425 C145 360 275 635 535 465" stroke="#ff62cf" stroke-width="2.2" opacity=".8"/>
+        <path d="M-40 375 C135 245 260 580 455 350" stroke="#ff0083" stroke-width="1.8" opacity=".75"/>
+      </g>
+      <g fill="none" stroke-linecap="round" filter="url(#blueGlow)">
+        <path d="M1700 455 C1480 210 1355 660 1130 390 C1265 515 1410 250 1590 365 C1445 305 1330 610 1075 425" stroke="#18bfff" stroke-width="3.5"/>
+        <path d="M1690 520 C1480 325 1350 670 1100 435 C1255 560 1395 320 1590 425 C1455 360 1325 635 1065 465" stroke="#62d2ff" stroke-width="2.2" opacity=".82"/>
+        <path d="M1640 375 C1465 245 1340 580 1145 350" stroke="#0088ff" stroke-width="1.8" opacity=".78"/>
+      </g>
+      <g fill="#ff4ec2" opacity=".85">
+        <circle cx="80" cy="220" r="3"/><circle cx="150" cy="300" r="2"/><circle cx="250" cy="210" r="4"/><circle cx="340" cy="320" r="2.5"/><circle cx="420" cy="260" r="2"/>
+      </g>
+      <g fill="#43c8ff" opacity=".9">
+        <circle cx="1520" cy="220" r="3"/><circle cx="1450" cy="300" r="2"/><circle cx="1350" cy="210" r="4"/><circle cx="1260" cy="320" r="2.5"/><circle cx="1180" cy="260" r="2"/>
+      </g>
+      <g filter="url(#pinkGlow)" fill="#ff35b7">
+        <text x="118" y="300" font-size="105" font-family="Arial">♪</text>
+        <text x="250" y="395" font-size="72" font-family="Arial">♪</text>
+      </g>
+      <g filter="url(#blueGlow)" fill="#25bfff">
+        <text x="1380" y="290" font-size="112" font-family="Arial">♪</text>
+        <text x="1260" y="390" font-size="126" font-family="Arial">𝄞</text>
+      </g>
+      <path d="M0 585 C240 560 390 608 610 587 C820 570 1050 610 1600 575" fill="none" stroke="url(#floorGlow)" stroke-width="3" opacity=".5"/>
+      <rect x="0" y="550" width="1600" height="130" fill="url(#floorGlow)" opacity=".055"/>
+    </svg>
     <div class="hero-music-left" aria-hidden="true">♪</div>
     <div class="hero-music-right" aria-hidden="true">♫</div>
     <div class="hero-wave" aria-hidden="true">▁▂▃▄▅▆▇♫▇▆▅▄▃▂▁</div>
@@ -548,13 +582,13 @@
         <a class="btn btn-primary"
            href="https://open.spotify.com/artist/2BXRF4rd0iW9vtnKxB4cKW?si=eAfatKGETKm8lGHumpPO_Q&utm_source=copy-link"
            target="_blank" rel="noopener">
-          ▶ Ascultă pe Spotify
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#111"/><path d="M6.4 9.3c3.7-1.1 7.8-.8 11.1.9" fill="none" stroke="#ffd92e" stroke-width="1.5" stroke-linecap="round"/><path d="M7 12.2c3.2-.9 6.7-.6 9.6.8" fill="none" stroke="#ffd92e" stroke-width="1.4" stroke-linecap="round"/><path d="M7.6 15c2.7-.7 5.5-.5 8 .7" fill="none" stroke="#ffd92e" stroke-width="1.3" stroke-linecap="round"/></svg>Ascultă pe Spotify
         </a>
 
         <a class="btn btn-secondary"
            href="https://youtube.com/@manele-din-suflet?si=WMcZwY20iyJj_R7I"
            target="_blank" rel="noopener">
-          Vezi pe YouTube
+          <svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" rx="6" fill="#ff0000"/><path d="M12 6l9 5-9 5z" fill="#fff"/></svg>Vezi pe YouTube
         </a>
       </div>
     </div>
@@ -568,7 +602,7 @@
       <a class="platform"
          href="https://youtube.com/@manele-din-suflet?si=WMcZwY20iyJj_R7I"
          target="_blank" rel="noopener">
-        <div class="platform-icon">▶</div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><rect x="4" y="13" width="56" height="38" rx="11" fill="#ff0000"/><path d="M27 22l18 10-18 10z" fill="#fff"/></svg></div>
         <strong>YouTube</strong>
         <span>Canalul oficial</span>
       </a>
@@ -576,7 +610,7 @@
       <a class="platform"
          href="https://open.spotify.com/artist/2BXRF4rd0iW9vtnKxB4cKW?si=eAfatKGETKm8lGHumpPO_Q&utm_source=copy-link"
          target="_blank" rel="noopener">
-        <div class="platform-icon">♫</div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#1ed760"/><path d="M18 25c10-3 22-2 31 3M20 33c9-2 18-1 26 3M22 40c7-2 14-1 20 2" fill="none" stroke="#08110b" stroke-width="4" stroke-linecap="round"/></svg></div>
         <strong>Spotify</strong>
         <span>Ascultă muzica</span>
       </a>
@@ -584,7 +618,7 @@
       <a class="platform"
          href="https://music.apple.com/es/artist/manele-din-suflet/6791693493"
          target="_blank" rel="noopener">
-        <div class="platform-icon"></div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><path fill="#fff" d="M43 34c0-8 7-12 7-12-4-6-10-7-12-7-5-.5-10 3-12 3s-7-3-11-3C8 15 1 21 1 32c0 6 2 12 5 17 3 4 6 9 10 9 4 0 6-3 11-3s7 3 11 3c4 0 7-4 10-9 3-4 4-8 4-9-1 0-9-3-9-12v6zM34 10c3-4 3-8 3-10-4 0-8 2-10 5-3 3-4 7-3 10 4 0 8-2 10-5z"/></svg></div>
         <strong>Apple Music</strong>
         <span>Ascultă pe Apple Music</span>
       </a>
@@ -592,7 +626,7 @@
       <a class="platform"
          href="https://www.tiktok.com/@manele.dinsuflet?_r=1&_t=ZN-998V0IiyaxS"
          target="_blank" rel="noopener">
-        <div class="platform-icon">♪</div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><path d="M38 8c2 9 7 15 16 17v11c-6 0-11-2-16-6v14c0 9-7 16-16 16S6 53 6 44s7-16 16-16c2 0 4 .3 6 1v11a8 8 0 10-1 5V8h11z" fill="#fff"/><path d="M38 8c2 8 7 13 14 16" fill="none" stroke="#25f4ee" stroke-width="4"/><path d="M28 11v34c0 5-4 9-9 9" fill="none" stroke="#fe2c55" stroke-width="4"/></svg></div>
         <strong>TikTok</strong>
         <span>@manele.dinsuflet</span>
       </a>
@@ -600,7 +634,7 @@
       <a class="platform"
          href="https://www.instagram.com/maneledinsuflet?igsi=MXA4d2JteHUybGp3cA%3D%3D&utm_source=qr"
          target="_blank" rel="noopener">
-        <div class="platform-icon">◎</div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffd600"/><stop offset=".45" stop-color="#ff0169"/><stop offset="1" stop-color="#7b2cff"/></linearGradient></defs><rect x="7" y="7" width="50" height="50" rx="14" fill="url(#ig)"/><rect x="17" y="17" width="30" height="30" rx="10" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="8" fill="none" stroke="#fff" stroke-width="4"/><circle cx="45" cy="19" r="3" fill="#fff"/></svg></div>
         <strong>Instagram</strong>
         <span>@maneledinsuflet</span>
       </a>
@@ -608,7 +642,7 @@
       <a class="platform"
          href="https://www.facebook.com/share/196wVbDPUC/?mibextid=wwXIfr"
          target="_blank" rel="noopener">
-        <div class="platform-icon">f</div>
+        <div class="platform-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#1877f2"/><path d="M37 18h8v-9h-8c-9 0-14 6-14 15v7h-8v10h8v20h11V41h9l2-10H34v-6c0-4 1-7 3-7z" fill="#fff"/></svg></div>
         <strong>Facebook</strong>
         <span>Pagina oficială</span>
       </a>
