@@ -112,25 +112,29 @@
     .menu a:hover{color:#ffd27a}
 
     .hero{
-      min-height:0;
-      aspect-ratio:1536/742;
-      width:100%;
+      min-height:82vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:108px 20px 92px;
       position:relative;
       overflow:hidden;
-      background:url('hero-manele-din-suflet.png') center/cover no-repeat;
+      background:
+        linear-gradient(rgba(0,0,0,.34),rgba(0,0,0,.52)),
+        url('banner.jpeg') center/cover no-repeat;
       border-bottom:1px solid rgba(255,186,48,.32)
     }
 
-    .hero-content,
-    .hero-music-left,
-    .hero-music-right,
-    .hero-wave{
-      display:none !important
+.hero::before{content:none}
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:radial-gradient(circle at center,rgba(0,0,0,0),rgba(0,0,0,.28) 82%)
     }
-
-    .hero::before{content:none}
-
-    .hero::after{content:none}
 
     .hero-content{
       position:relative;
@@ -317,7 +321,7 @@
       .brand img{width:44px;height:44px}
       .brand span{font-size:1rem}
       .menu{display:none}
-      .hero{min-height:0;padding:0;background-position:center}
+      .hero{min-height:72vh;padding:90px 18px 70px;background-position:center}
       .platforms{grid-template-columns:repeat(2,1fr)}
       .songs{grid-template-columns:1fr}
       .video-grid{grid-template-columns:1fr}
@@ -654,16 +658,16 @@
         <p>Produse digitale originale, invitații, designuri și printabile.</p>
         <div class="ads-products">
           <a class="ads-product" href="https://payhip.com/b/hsRk4" target="_blank" rel="noopener" title="Invitație de nuntă">
-            <img src="./produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
+            <img src="produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/vrdwD" target="_blank" rel="noopener" title="Invitație aniversară fetiță">
-            <img src="./producto-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
+            <img src="producto-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/ZHumP" target="_blank" rel="noopener" title="Invitație aniversară băiat">
-            <img src="./producto-baile.png" alt="Invitație aniversară pentru băiat" loading="lazy">
+            <img src="producto-baile.png" alt="Invitație aniversară pentru băiat" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/GusDo" target="_blank" rel="noopener" title="Baby on Board">
-            <img src="./produs-beb%C3%A9-a-borda.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
+            <img src="produs-beb%C3%A9-a-borda.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
           </a>
         </div>
 
