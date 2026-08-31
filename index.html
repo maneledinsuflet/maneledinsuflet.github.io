@@ -408,6 +408,35 @@
       .feature-row{grid-template-columns:1fr}
     }
 
+
+    .ads-products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin:18px 0 20px
+    }
+    .ads-product{
+      display:block;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(255,190,70,.20);
+      background:rgba(255,255,255,.03);
+      transition:.22s
+    }
+    .ads-product img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      display:block
+    }
+    .ads-product:hover{
+      transform:translateY(-3px);
+      border-color:rgba(255,190,70,.55)
+    }
+    @media(max-width:520px){
+      .ads-products{grid-template-columns:repeat(2,1fr)}
+    }
+
   </style>
 </head>
 
@@ -566,8 +595,23 @@
 
       <div class="feature-card" id="adrian-digital-studio">
         <h3>Adrian Digital Studio</h3>
-        <img class="ads-shop-logo" src="./ads-logo.jpegg?v=2" alt="Adrian Digital Studio">
+        <img class="ads-shop-logo" src="ads-logo.jpeg" alt="Adrian Digital Studio">
         <p>Produse digitale originale, invitații, designuri și printabile.</p>
+        <div class="ads-products">
+          <a class="ads-product" href="https://payhip.com/b/hsRk4" target="_blank" rel="noopener" title="Invitație de nuntă">
+            <img src="produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
+          </a>
+          <a class="ads-product" href="https://payhip.com/b/vrdwD" target="_blank" rel="noopener" title="Invitație aniversară fetiță">
+            <img src="produs-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
+          </a>
+          <a class="ads-product" href="https://payhip.com/b/ZHumP" target="_blank" rel="noopener" title="Invitație aniversară băiat">
+            <img src="produs-baiat.png" alt="Invitație aniversară pentru băiat" loading="lazy">
+          </a>
+          <a class="ads-product" href="https://payhip.com/b/GusDo" target="_blank" rel="noopener" title="Baby on Board">
+            <img src="produs-baby-on-board.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
+          </a>
+        </div>
+
         <a class="btn btn-primary"
            href="https://payhip.com/AdrianDigitalStudio"
            target="_blank" rel="noopener">
