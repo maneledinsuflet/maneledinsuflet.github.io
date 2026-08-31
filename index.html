@@ -72,11 +72,12 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
-      padding:14px 4%;
-      background:rgba(2,2,4,.96);
+      padding:10px 2.2%;
+      min-height:86px;
+      background:rgba(1,1,2,.98);
       backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,184,55,.35);
-      box-shadow:0 8px 28px rgba(0,0,0,.28)
+      border-bottom:1px solid rgba(255,198,28,.58);
+      box-shadow:0 8px 28px rgba(0,0,0,.32)
     }
 
     .brand{
@@ -87,43 +88,61 @@
     }
 
     .brand img{
-      width:64px;
-      height:64px;
+      width:72px;
+      height:72px;
       object-fit:cover;
       border-radius:50%;
-      box-shadow:0 0 26px rgba(255,174,0,.30)
+      box-shadow:0 0 24px rgba(255,188,0,.38)
     }
 
     .brand span{
       font-weight:900;
-      color:#ffd25a;
-      font-size:1.35rem;
+      font-style:italic;
+      color:#ffd426;
+      font-size:1.72rem;
       white-space:nowrap;
-      text-shadow:0 0 16px rgba(255,190,50,.16)
+      text-shadow:0 0 18px rgba(255,199,30,.22)
     }
 
     .menu{
       display:flex;
-      gap:24px;
-      font-size:.95rem
+      align-items:center;
+      gap:34px;
+      font-size:1rem
     }
 
-    .menu a{color:#e8e8e8;transition:.2s}
+    .menu a{
+      color:#f1f1f1;
+      transition:.2s;
+      position:relative;
+      padding:10px 0
+    }
+    .menu a:first-child{color:#ffd426}
+    .menu a:first-child::after{
+      content:"";
+      position:absolute;
+      left:10%;
+      right:10%;
+      bottom:1px;
+      height:2px;
+      background:#ffd426;
+      box-shadow:0 0 8px rgba(255,212,38,.55)
+    }
     .menu a:hover{color:#ffd27a}
 
     .hero{
-      min-height:82vh;
+      min-height:610px;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:108px 20px 92px;
+      padding:34px 20px 62px;
       position:relative;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.78)),
-        url('banner.jpeg') center/cover no-repeat;
-      border-bottom:1px solid rgba(255,186,48,.32)
+        linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.28)),
+        url('banner.jpeg') center center/cover no-repeat;
+      border-bottom:1px solid rgba(255,186,48,.34)
     }
 
     .hero::before{
@@ -132,12 +151,7 @@
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 5% 62%, rgba(255,0,155,.38), transparent 26%),
-        radial-gradient(circle at 14% 78%, rgba(255,0,95,.24), transparent 24%),
-        radial-gradient(circle at 95% 60%, rgba(0,167,255,.38), transparent 28%),
-        radial-gradient(circle at 88% 80%, rgba(0,94,255,.24), transparent 24%),
-        radial-gradient(circle at 50% 96%, rgba(255,188,25,.18), transparent 18%);
-      filter:saturate(1.18)
+        radial-gradient(circle at 50% 100%, rgba(255,192,24,.11), transparent 20%);
     }
 
     .hero::after{
@@ -146,68 +160,87 @@
       inset:0;
       pointer-events:none;
       background:
-        linear-gradient(90deg,rgba(0,0,0,.28),transparent 24%,transparent 76%,rgba(0,0,0,.28)),
-        radial-gradient(circle at center,rgba(0,0,0,.02),rgba(0,0,0,.60) 76%)
+        linear-gradient(90deg,rgba(0,0,0,.08),transparent 25%,transparent 75%,rgba(0,0,0,.08)),
+        linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.14))
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:920px
+      max-width:930px;
+      width:100%
     }
 
     .mini{
-      color:#ffc928;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      color:#ffd426;
       text-transform:uppercase;
       letter-spacing:6px;
-      font-size:.82rem;
-      margin-bottom:16px;
+      font-size:.86rem;
+      margin-bottom:15px;
       font-weight:900;
-      text-shadow:0 0 16px rgba(255,193,40,.24)
+      text-shadow:0 0 16px rgba(255,193,40,.28)
     }
+    .mini::before,.mini::after{
+      content:"";
+      width:58px;
+      height:2px;
+      background:linear-gradient(90deg,transparent,#ffd426);
+      box-shadow:0 0 8px rgba(255,212,38,.4)
+    }
+    .mini::after{background:linear-gradient(90deg,#ffd426,transparent)}
 
     h1{
-      font-size:clamp(3.4rem,8.6vw,7rem);
-      line-height:.94;
-      letter-spacing:-2px;
-      margin-bottom:24px;
-      text-shadow:0 10px 38px rgba(0,0,0,.82);
+      font-size:clamp(4rem,8vw,6.7rem);
+      line-height:.93;
+      letter-spacing:1px;
+      margin-bottom:18px;
+      text-shadow:0 8px 30px rgba(0,0,0,.88);
       font-weight:900
     }
 
     .subtitle{
-      font-size:clamp(1.05rem,2.7vw,1.48rem);
-      max-width:760px;
+      font-size:clamp(1.05rem,2.2vw,1.42rem);
+      max-width:700px;
       margin:auto;
-      color:#f4f4f4;
-      text-shadow:0 3px 20px rgba(0,0,0,.82)
+      color:#f5f5f5;
+      text-shadow:0 3px 16px rgba(0,0,0,.9)
     }
+    .subtitle .accent-yellow{color:#ffd426}
+    .subtitle .accent-pink{color:#ff32b5}
 
     .hero-buttons{
-      margin-top:34px;
+      margin-top:30px;
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:14px
+      gap:28px
     }
 
     .btn{
-      display:inline-block;
-      padding:14px 24px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:255px;
+      padding:15px 28px;
       border-radius:999px;
       font-weight:800;
       transition:.25s
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,#ffbe3b,#e58a00);
+      background:linear-gradient(180deg,#ffd51f,#e4ab00);
       color:#111;
-      box-shadow:0 10px 30px rgba(255,160,0,.28)
+      border:1px solid #ffe45e;
+      box-shadow:0 10px 28px rgba(255,194,0,.28)
     }
 
     .btn-secondary{
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(0,0,0,.30)
+      border:1px solid #ff2b2b;
+      background:rgba(0,0,0,.50)
     }
 
     .btn:hover{transform:translateY(-3px)}
@@ -335,7 +368,7 @@
       .brand img{width:44px;height:44px}
       .brand span{font-size:1rem}
       .menu{display:none}
-      .hero{min-height:72vh;padding:90px 18px 70px;background-position:center}
+      .hero{min-height:560px;padding:42px 18px 58px;background-position:center}
       .platforms{grid-template-columns:repeat(2,1fr)}
       .songs{grid-template-columns:1fr}
       .video-grid{grid-template-columns:1fr}
@@ -448,8 +481,9 @@
     .ads-product img{
       width:100%;
       aspect-ratio:1/1;
-      object-fit:cover;
-      display:block
+      object-fit:contain;
+      display:block;
+      background:#111
     }
     .ads-product:hover{
       transform:translateY(-3px);
@@ -459,51 +493,20 @@
       .ads-products{grid-template-columns:repeat(2,1fr)}
     }
 
-    .hero-music-left,
-    .hero-music-right,
+    .hero-music-left,.hero-music-right{display:none}
     .hero-wave{
       position:absolute;
+      left:50%;
+      bottom:3%;
+      transform:translateX(-50%);
       z-index:1;
       pointer-events:none;
-      user-select:none
-    }
-
-    .hero-music-left{
-      left:4%;
-      top:46%;
-      color:#ff2aa8;
-      font-size:clamp(3rem,5vw,5.4rem);
-      text-shadow:0 0 14px #ff2aa8,0 0 34px rgba(255,42,168,.7)
-    }
-
-    .hero-music-right{
-      right:5%;
-      top:44%;
-      color:#27b8ff;
-      font-size:clamp(3.2rem,5vw,5.8rem);
-      text-shadow:0 0 14px #27b8ff,0 0 34px rgba(39,184,255,.72)
-    }
-
-    .hero-wave{
-      left:50%;
-      bottom:6%;
-      transform:translateX(-50%);
-      color:#ffd12d;
-      font-size:clamp(1.7rem,3vw,2.8rem);
-      letter-spacing:5px;
-      opacity:.95;
-      text-shadow:0 0 12px #ffd12d,0 0 26px rgba(255,209,45,.5)
-    }
-
-    @media(max-width:850px){
-      .hero-music-left{left:2%;top:50%;font-size:2.7rem;opacity:.72}
-      .hero-music-right{right:2%;top:49%;font-size:2.9rem;opacity:.72}
-      .hero-wave{bottom:4%;font-size:1.5rem;letter-spacing:2px}
-    }
-
-    @media(max-width:520px){
-      .hero-music-left,.hero-music-right{opacity:.45;font-size:2.15rem}
-      .hero-wave{font-size:1.2rem}
+      user-select:none;
+      color:#ffd426;
+      font-size:clamp(1.5rem,2.4vw,2.2rem);
+      letter-spacing:4px;
+      opacity:.98;
+      text-shadow:0 0 10px #ffd426,0 0 24px rgba(255,209,45,.48)
     }
 
   </style>
@@ -537,7 +540,8 @@
 
       <p class="subtitle">
         Muzică din inimă, pentru suflet.
-        Povești, emoții și melodii create pentru oamenii care simt muzica.
+        Povești, <span class="accent-yellow">emoții</span> și
+        <span class="accent-pink">melodii</span> create pentru oamenii care simt muzica.
       </p>
 
       <div class="hero-buttons">
@@ -671,16 +675,16 @@
         <p>Produse digitale originale, invitații, designuri și printabile.</p>
         <div class="ads-products">
           <a class="ads-product" href="https://payhip.com/b/hsRk4" target="_blank" rel="noopener" title="Invitație de nuntă">
-            <img src="produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
+            <img src="./produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/vrdwD" target="_blank" rel="noopener" title="Invitație aniversară fetiță">
-            <img src="producto-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
+            <img src="./producto-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/ZHumP" target="_blank" rel="noopener" title="Invitație aniversară băiat">
-            <img src="producto-baile.png" alt="Invitație aniversară pentru băiat" loading="lazy">
+            <img src="./producto-baile.png" alt="Invitație aniversară pentru băiat" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/GusDo" target="_blank" rel="noopener" title="Baby on Board">
-            <img src="produs-bebé-a-borda.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
+            <img src="./produs-beb%C3%A9-a-borda.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
           </a>
         </div>
 
