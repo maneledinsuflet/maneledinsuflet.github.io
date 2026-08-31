@@ -72,10 +72,11 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
-      padding:12px 6%;
-      background:rgba(0,0,0,.9);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,184,55,.18)
+      padding:14px 4%;
+      background:rgba(2,2,4,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,184,55,.35);
+      box-shadow:0 8px 28px rgba(0,0,0,.28)
     }
 
     .brand{
@@ -86,18 +87,19 @@
     }
 
     .brand img{
-      width:54px;
-      height:54px;
+      width:64px;
+      height:64px;
       object-fit:cover;
       border-radius:50%;
-      box-shadow:0 0 24px rgba(255,153,0,.25)
+      box-shadow:0 0 26px rgba(255,174,0,.30)
     }
 
     .brand span{
-      font-weight:800;
-      color:#ffd27a;
-      font-size:1.2rem;
-      white-space:nowrap
+      font-weight:900;
+      color:#ffd25a;
+      font-size:1.35rem;
+      white-space:nowrap;
+      text-shadow:0 0 16px rgba(255,190,50,.16)
     }
 
     .menu{
@@ -110,24 +112,28 @@
     .menu a:hover{color:#ffd27a}
 
     .hero{
-      min-height:80vh;
+      min-height:82vh;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:110px 20px 90px;
+      padding:108px 20px 92px;
       position:relative;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.72)),
-        url('banner.jpeg') center/cover no-repeat
+        linear-gradient(rgba(0,0,0,.34),rgba(0,0,0,.52)),
+        url('banner.jpeg') center/cover no-repeat;
+      border-bottom:1px solid rgba(255,186,48,.32)
     }
+
+.hero::before{content:none}
 
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at center,rgba(0,0,0,.02),rgba(0,0,0,.58) 74%)
+      pointer-events:none;
+      background:radial-gradient(circle at center,rgba(0,0,0,0),rgba(0,0,0,.28) 82%)
     }
 
     .hero-content{
@@ -137,28 +143,30 @@
     }
 
     .mini{
-      color:#ffc24f;
+      color:#ffc928;
       text-transform:uppercase;
-      letter-spacing:5px;
-      font-size:.8rem;
-      margin-bottom:14px;
-      font-weight:700
+      letter-spacing:6px;
+      font-size:.82rem;
+      margin-bottom:16px;
+      font-weight:900;
+      text-shadow:0 0 16px rgba(255,193,40,.24)
     }
 
     h1{
-      font-size:clamp(3rem,8vw,6.4rem);
-      line-height:.97;
+      font-size:clamp(3.4rem,8.6vw,7rem);
+      line-height:.94;
       letter-spacing:-2px;
-      margin-bottom:22px;
-      text-shadow:0 8px 35px rgba(0,0,0,.7)
+      margin-bottom:24px;
+      text-shadow:0 10px 38px rgba(0,0,0,.82);
+      font-weight:900
     }
 
     .subtitle{
-      font-size:clamp(1.05rem,2.7vw,1.5rem);
-      max-width:720px;
+      font-size:clamp(1.05rem,2.7vw,1.48rem);
+      max-width:760px;
       margin:auto;
-      color:#f1f1f1;
-      text-shadow:0 3px 18px rgba(0,0,0,.75)
+      color:#f4f4f4;
+      text-shadow:0 3px 20px rgba(0,0,0,.82)
     }
 
     .hero-buttons{
@@ -426,8 +434,9 @@
     .ads-product img{
       width:100%;
       aspect-ratio:1/1;
-      object-fit:cover;
-      display:block
+      object-fit:contain;
+      display:block;
+      background:#111
     }
     .ads-product:hover{
       transform:translateY(-3px);
@@ -435,6 +444,53 @@
     }
     @media(max-width:520px){
       .ads-products{grid-template-columns:repeat(2,1fr)}
+    }
+
+    .hero-music-left,
+    .hero-music-right,
+    .hero-wave{
+      position:absolute;
+      z-index:1;
+      pointer-events:none;
+      user-select:none
+    }
+
+    .hero-music-left{
+      left:4%;
+      top:46%;
+      color:#ff2aa8;
+      font-size:clamp(3rem,5vw,5.4rem);
+      text-shadow:0 0 14px #ff2aa8,0 0 34px rgba(255,42,168,.7)
+    }
+
+    .hero-music-right{
+      right:5%;
+      top:44%;
+      color:#27b8ff;
+      font-size:clamp(3.2rem,5vw,5.8rem);
+      text-shadow:0 0 14px #27b8ff,0 0 34px rgba(39,184,255,.72)
+    }
+
+    .hero-wave{
+      left:50%;
+      bottom:6%;
+      transform:translateX(-50%);
+      color:#ffd12d;
+      font-size:clamp(1.7rem,3vw,2.8rem);
+      letter-spacing:5px;
+      opacity:.95;
+      text-shadow:0 0 12px #ffd12d,0 0 26px rgba(255,209,45,.5)
+    }
+
+    @media(max-width:850px){
+      .hero-music-left{left:2%;top:50%;font-size:2.7rem;opacity:.72}
+      .hero-music-right{right:2%;top:49%;font-size:2.9rem;opacity:.72}
+      .hero-wave{bottom:4%;font-size:1.5rem;letter-spacing:2px}
+    }
+
+    @media(max-width:520px){
+      .hero-music-left,.hero-music-right{opacity:.45;font-size:2.15rem}
+      .hero-wave{font-size:1.2rem}
     }
 
   </style>
@@ -459,6 +515,9 @@
   </nav>
 
   <header class="hero" id="acasa">
+    <div class="hero-music-left" aria-hidden="true">♪</div>
+    <div class="hero-music-right" aria-hidden="true">♫</div>
+    <div class="hero-wave" aria-hidden="true">▁▂▃▄▅▆▇♫▇▆▅▄▃▂▁</div>
     <div class="hero-content">
       <div class="mini">Site Oficial</div>
       <h1>MANELE<br>DIN SUFLET</h1>
@@ -595,20 +654,20 @@
 
       <div class="feature-card" id="adrian-digital-studio">
         <h3>Adrian Digital Studio</h3>
-        <img class="ads-shop-logo" src="./logotipo-de-anuncios.jpeg?v=3" alt="Adrian Digital Studio">
+        <img class="ads-shop-logo" src="logotipo-de-anuncios.jpeg" alt="Adrian Digital Studio">
         <p>Produse digitale originale, invitații, designuri și printabile.</p>
         <div class="ads-products">
           <a class="ads-product" href="https://payhip.com/b/hsRk4" target="_blank" rel="noopener" title="Invitație de nuntă">
-            <img src="./produs-nunta.png?v=3" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
+            <img src="produs-nunta.png" alt="Invitație de nuntă Adrian Digital Studio" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/vrdwD" target="_blank" rel="noopener" title="Invitație aniversară fetiță">
-            <img src="./producto-fetita.png?v=3" alt="Invitație aniversară pentru fetiță" loading="lazy">
+            <img src="producto-fetita.png" alt="Invitație aniversară pentru fetiță" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/ZHumP" target="_blank" rel="noopener" title="Invitație aniversară băiat">
-            <img src="./producto-baile.png?v=3" alt="Invitație aniversară pentru băiat" loading="lazy">
+            <img src="producto-baile.png" alt="Invitație aniversară pentru băiat" loading="lazy">
           </a>
           <a class="ads-product" href="https://payhip.com/b/GusDo" target="_blank" rel="noopener" title="Baby on Board">
-            <img src="./produs-bebe-a-borda.png?v=3" alt="Baby on Board Adrian Digital Studio" loading="lazy">
+            <img src="produs-bebe-a-borda.png" alt="Baby on Board Adrian Digital Studio" loading="lazy">
           </a>
         </div>
 
